@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config compile/webpack.dev.config.js --host 0.0.0.0 --port 7788 --colors --hot",
-    "build": "NODE_ENV=production webpack --config compile/webpack.pro.config.js -p"
+    "dev": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config compile/webpack.dev.config.js --host 0.0.0.0 --port 8080 --colors --hot",
+    "build": "rimraf ./build/ && NODE_ENV=production webpack --config compile/webpack.pro.config.js -p"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,27 @@
   },
   "homepage": "https://github.com/liyangready/webpack-from-0-to-1#readme",
   "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "html-webpack-plugin": "^2.28.0",
+    "inline-manifest-webpack-plugin": "^3.0.1",
+    "inline-manifest2-webpack-plugin": "0.0.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
+    "postcss-loader": "^1.3.3",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
   }
 }

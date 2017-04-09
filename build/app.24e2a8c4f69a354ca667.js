@@ -1,0 +1,1 @@
+webpackJsonp([0],[,function(t,n,u){"use strict";function e(t){return t&&t.__esModule?t:{default:t}}var i=u(0),c=e(i),o=u(4),a=e(o);(0,c.default)("<img />").attr("src",a.default).appendTo(".main")},function(t,n){},function(t,n,u){"use strict";u(1),u(2)},function(t,n){t.exports="//img.xxx.com/timg.jpg"}],[3]);
