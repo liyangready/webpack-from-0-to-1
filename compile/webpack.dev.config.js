@@ -1,6 +1,8 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin'); // html inject
 var webpack = require('webpack');
+var source_modules = require('./source_modules.js'); // node_modlues中需要进行源码编译的包
+
 module.exports = {
 	/*
     * 入口文件
@@ -24,7 +26,7 @@ module.exports = {
     		use: [{
     			loader: "babel-loader"
     		}],
-    		exclude: /node_modules/
+    		include: source_modules
     	}, {
             test: /\.less$/,
             use: [{
@@ -43,7 +45,7 @@ module.exports = {
                   }
                 }
             }],
-            exclude: /node_modules/
+            include: source_modules
         }, {
             test: /\.png|jpg$/,
             use: [{

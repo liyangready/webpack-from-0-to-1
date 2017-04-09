@@ -5,6 +5,8 @@ var chunkSorts = ["manifest", "vendor", "app"]; // js顺序
 var InlineManifestWebpackPlugin = require('inline-manifest2-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var extractLESS = new ExtractTextPlugin('[name].[chunkhash].css');
+var source_modules = require('./source_modules.js'); // node_modlues中需要进行源码编译的包
+
 var cdn = {
     static: '//static.xxx.com',
     img: '//img.xxx.com'
@@ -34,7 +36,7 @@ module.exports = {
             use: [{
                 loader: "babel-loader"
             }],
-            exclude: /node_modules/
+            include: source_modules
         }, {
             test: /\.less$/,
             use: extractLESS.extract([ 'css-loader', 'less-loader', {
@@ -47,7 +49,7 @@ module.exports = {
                     }  
                 }
             }]),   
-            exclude: /node_modules/
+            include: source_modules
         }, {
             test: /\.png|jpg$/,
             use: [{
