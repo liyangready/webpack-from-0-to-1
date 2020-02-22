@@ -1,7 +1,7 @@
 {
   "name": "webpack-from-0-to-1",
   "version": "1.0.0",
-  "description": "webpack2 template ",
+  "description": "webpack2 template test",
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development node_modules/.bin/webpack-dev-server --config compile/webpack.dev.config.js --host 0.0.0.0 --port 8080 --colors --hot",
